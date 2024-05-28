@@ -7,6 +7,6 @@ app.use(express.json());
 
 app.use('/produto', produtoRoute);
 
-app.listen(8080, () => {
+app.listen(8080, async () => {
   console.log('Servidor funcionando!!');
 });
