@@ -1,7 +1,7 @@
 import knex from 'knex';
-import knexConfig from '../config/config.js';
+import knexConfig from '../config/database.js';
 
-let conn;
+let conn: any;
 
 function conectar() {
   if (conn) {

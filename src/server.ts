@@ -1,6 +1,7 @@
-import express from 'express';
-import produtoRoute from './src/module/produto/produto.route.js';
-import dotenv from 'dotenv';
+import * as express from 'express';
+import produtoRoute from './module/produto/produto.route.js';
+import * as dotenv from 'dotenv';
+
 dotenv.config();
 const app = express();
 app.use(express.json());
