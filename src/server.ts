@@ -1,6 +1,6 @@
-import * as express from 'express';
-import produtoRoute from './module/produto/produto.route.js';
-import * as dotenv from 'dotenv';
+import express from 'express';
+import produtoRoute from './module/produto/produto.route.js'; 
+import dotenv from 'dotenv';
 
 dotenv.config();
 const app = express();

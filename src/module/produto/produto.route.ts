@@ -1,16 +1,16 @@
-import type { Request, Response } from 'express';
 import * as express from 'express';
-import * as produtoModel from './produto.model.js';
+//import { Request, Response } from 'express';
+import produtoFactory from './produto.factory.js';
 
 const router = express.Router();
 
-router.get('/', async (_: Request, res: Response) => {
-  const data = await produtoModel.getAll();
+router.get('/', async (_, res) => {
+  const data = await produtoFactory.getAll();
   return res.status(200).json({ data });
 });
 
-router.post('/', async (req: Request, res: Response) => {
-  const data = await produtoModel.store(req.body);
+router.post('/', async (req, res) => {
+  const data = await produtoFactory.store(req.body);
   return res.status(200).json({ data });
 });
 

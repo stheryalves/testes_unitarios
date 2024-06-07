@@ -1,4 +1,4 @@
-/*import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 dotenv.config();
 
 const db = {
@@ -10,4 +10,4 @@ const db = {
     DB_SCHEMA: process.env.DB_SCHEMA,
 }
 
-export default db;*/
+export default db;

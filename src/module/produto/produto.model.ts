@@ -1,10 +1,19 @@
-import knex from '../../service/knex';
-import { Produto, ProdutoCreate } from './produto.d.js'
+import { Knex } from 'knex';
+import KnexService from '../../service/knex.js';
 
-export const getAll = async (): Promise<Produto[] | []> => {
-  return knex('produtos').select();
-};
+export default class Produto {
+  private db: Knex
+  
+  constructor(knexService: KnexService){
+    this.db = knexService.obterConexao()
+  }
 
-export const store = async (params: ProdutoCreate) => {
-  return knex('produtos').insert(params);
-};
+  getAll = async () => {
+    return this.db('produtos').select();
+  };
+
+  store = async (params: any) => {
+    return this.db('produtos').insert(params);
+  };
+
+}

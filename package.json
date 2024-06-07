@@ -1,11 +1,14 @@
 {
   "name": "automacao",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/server.js",
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "start": "tsnd --respawn src/server.ts"
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build-and-start": "npm run build && npm start"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
